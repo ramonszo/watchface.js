@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Watchface.js</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
+
+        <style>
+            @media (max-width: 280px){
+                #watch-face {display: block !important;position: fixed;top: 0; right: 0;bottom: 0; left: 0;vertical-align: middle;z-index: 1000000;text-align: center;}
+                #watch-face .time {display: inline-block;position: absolute;font-size: 24px; left:0; right: 0;text-align: center;top: 50%;margin-top: 12px;}
+            }
+
+            @media (max-width: 80px){
+                #watch-face * {display: none;}
+                #watch-face .digital-time {margin-top: 0;transform:rotate(-90deg) translateX(0%);font-size: 60vw;}
+            }
+        </style>
+    </head>
+    <body>
+        <script src="watchface.js"></script>
+        <script>
+            Watchface({
+                id: 'watch-face',
+                mode: 'digital',
+                format: 12,
+                band: true,
+                seconds: true,
+                colors: {
+                    background: '#C00',
+                    text: '#FFF',
+                    pointer: '#F90',
+                    smallPointer: '#F00'
+                },
+            });
+        </script>
+    </body>
+</html>
