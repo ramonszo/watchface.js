@@ -57,8 +57,8 @@ window['Watchface'] = function(options){
                 '#watch-face .analog ol{position:absolute;width:85vw;height:85vw;border-radius:50%;top:50%;background:'+option('colors', 'analogBackground')+';margin:-50vw auto 0;padding:7.5vw;}'+
                 '#watch-face .analog ol > *{display:block;position:absolute;top:50%;left:50%;width:15vw;height:15vw;line-height:15vw;font-size:10vw;text-align:center;margin:-7.5vw;}'+
                 '#watch-face .analog ol:after{content:\'\';background:'+option('colors', 'pointers')+';border:1vw solid '+option('colors', 'analogBackground')+';box-sizing:border-box;width:5vw;height:5vw;z-index:10;position:absolute;left:50%;top:50%;margin-top:-2.5vw;margin-left:-2.5vw;border-radius:50%;}'+
-                '#watch-face .analog .hour{height:40vw;width:2vw;background:'+option('colors', 'pointers')+';position:absolute;left:50%;margin-left:-1.5vw;}'+
-                '#watch-face .analog .minute{height:30vw;width:2vw;background:'+option('colors', 'pointers')+';position:absolute;left:50%;margin-left:-1.5vw;}'+
+                '#watch-face .analog .hour{height:30vw;width:2vw;background:'+option('colors', 'pointers')+';position:absolute;left:50%;margin-left:-1.5vw;}'+
+                '#watch-face .analog .minute{height:40vw;width:2vw;background:'+option('colors', 'pointers')+';position:absolute;left:50%;margin-left:-1.5vw;}'+
                 '#watch-face .analog .second{height:40vw;width:1vw;background:'+option('colors', 'secPointer')+';position:absolute;left:50%;margin-left:-.5vw;}'+
             '}',
             
