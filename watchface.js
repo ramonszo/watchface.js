@@ -159,7 +159,7 @@ window['Watchface'] = function(options){
                 updateClock(watch);
             };
 
-            if(option('seconds')) {
+            if(option('seconds')||option('mode')=='analog') {
                 window.requestAnimationFrame(update);
             } else {
                 updateClockInterval = setTimeout(update, 30000);
