@@ -1,6 +1,6 @@
 # watchface.js
 
-[![Watchface.JS demo](https://media.giphy.com/media/fpyRIXSk95wzu/giphy.gif)](https://www.youtube.com/watch?v=v717h5Q9Rjw)
+[![Watchface.JS demo](https://github.com/ramon82/watchface.js/blob/master/preview.gif?raw=true)](https://on.ramon82.com/2npuEYj)
 
 ## A *useless* library to fill the gap between mobile and layout breaks
 Or ***a cool easter egg for responsive perfectionists***. 
