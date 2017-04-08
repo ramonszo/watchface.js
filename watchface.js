@@ -161,17 +161,17 @@ window['Watchface'] = function(options){
                                         digitalTime+
                                     '</div>';
             } else {
-                watch.innerHTML = '<div class="inner analog">\
-                                        <div class="clock">\
-                                            <ol>\
-                                                <li>4</li><li>5</li><li class="n n6">6</li>\
-                                                <li>7</li><li>8</li><li class="n n9">9</li><li>10</li><li>11</li>\
-                                                <li class="n n12">12</li><li>1</li><li>2</li><li class="n n3">3</li>\
-                                            </ol>\
-                                            <div class="hour pointer"></div>\
-                                            <div class="minute pointer"></div>\
-                                            <div class="second pointer"></div>\
-                                        </div>'
+                watch.innerHTML = '<div class="inner analog">'+
+                                        '<div class="clock">'+
+                                            '<ol>'+
+                                                '<li>4</li><li>5</li><li class="n n6">6</li>'+
+                                                '<li>7</li><li>8</li><li class="n n9">9</li><li>10</li><li>11</li>'+
+                                                '<li class="n n12">12</li><li>1</li><li>2</li><li class="n n3">3</li>'+
+                                            '</ol>'+
+                                            '<div class="hour pointer"></div>'+
+                                            '<div class="minute pointer"></div>'+
+                                            '<div class="second pointer"></div>'+
+                                        '</div>'
                                         +digitalTime+
                                    '</div>';
             }
