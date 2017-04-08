@@ -47,6 +47,8 @@ window['Watchface'] = function(options){
             '@media (max-width: '+watchOffset+'px){'+
                 '#watch-face {display: block;position: fixed;top: 0; right: 0;bottom: 0; left: 0;vertical-align: middle;z-index: 1000000;text-align: center;background:'+option('colors', 'background')+';color:'+option('colors', 'text')+';}'+
                 '#watch-face .inner {position: absolute;display:block!important;top: 50%;left:0; right: 0;transform:translateY(-50%)}'+
+                '#watch-face .digital-time {white-space:nowrap;text-transform:uppercase;}'+
+            
                 '#watch-face .digital .icon > * {max-width:33vw;}'+
                 '#watch-face .digital .digital-time {display: inline-block;font-size: 10vw;text-align: center;margin-top: 10vw;}'+
 
