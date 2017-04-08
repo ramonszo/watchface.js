@@ -5,6 +5,8 @@
 ## A *useless* library to fill the gap between mobile and layout breaks
 Or ***a cool easter egg for responsive perfectionists***. 
 
+Live demo: https://on.ramon82.com/2npuEYj
+
 ## How to use
 Just call when you're ready: 
 
