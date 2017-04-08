@@ -10,6 +10,7 @@ window['Watchface'] = function(options){
             seconds: false,
             icon: '',
             customCSS: false,
+            leadingZero: true,
             media: {
                 watch: 280,
                 band: 100
@@ -63,7 +64,7 @@ window['Watchface'] = function(options){
             
             '@media (max-width: '+bandOffset+'px){'+
                 '#watch-face * {display: none;}'+
-                '#watch-face .digital-time {display:block !important;margin: 0;font-size: 60vw !important;transform-origin: left top 0;margin-left:16vw;float:left;position:absolute;transform: rotate(-90deg) translateX(-50%);}'+
+                '#watch-face .digital-time {display:block !important;margin: 0;font-size: 60vw !important;transform-origin: left top 0;margin-left:20vw;float:left;position:absolute;transform: rotate(-90deg) translateX(-50%);}'+
                 '#watch-face .digital-time * {display:inline}'+
             '}'
         ];
@@ -118,7 +119,10 @@ window['Watchface'] = function(options){
                 ampm = '';
             }
 
-            hours = (hours >= 10) ? hours : "0" + hours;
+            if(option('leadingZero')) {
+                hours = (hours >= 10) ? hours : "0" + hours;
+            }
+            
             minutes = (minutes >= 10) ? minutes : "0" + minutes;
             seconds = (seconds >= 10) ? seconds : "0" + seconds;
 
