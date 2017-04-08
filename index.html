@@ -4,21 +4,34 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
 
         <style>
-            .resize {position: absolute;left:50%;top:50%;margin-top:-7px;font-size: 14px;text-transform: uppercase;font-weight: bold;font-family:sans-serif;white-space: nowrap;transform:translateX(-50%);}
+            body {font-size: 14px;text-transform: uppercase;font-family:sans-serif;}
+            
+            .resize {font-weight: bold;position: absolute;left:50%;top:50%;margin-top:-7px;white-space: nowrap;transform:translateX(-50%);}
             .resize:after, .resize:before {content:'\2192';color: #999;display:inline-block;margin:0 0.5em;}
             .resize:after {content:'\2190'}
-
+            
+            .skin {white-space: nowrap;overflow: hidden;font-weight: bold;position: absolute;z-index: 9999999;/*sorry*/;left:0;right:0;bottom: 0;background: #fff;font-size:12px;padding:12px;color:#fff;background:#333;}
             #watch-face {font-family: monospace !important;}
         </style>
     </head>
     <body>
-        <div class="resize">Resize to less than 280px</div>
+        <div class="resize">
+                Resize to less than 280px
+        </div>
+        <div class="skin">
+            Skin: 
+            
+            <select id="skin" onchange="location.href=location.href.split('?')[0]+'?skin='+this.options[this.selectedIndex].value;">
+                <option value="analog">Analog</option>
+                <option value="digital">Digital</option>
+            </select>
+        </div>
 
         <script src="watchface.js"></script>
         <script>
             Watchface({
                 id: 'watch-face',
-                mode: 'digital',
+                mode: ((location.href.split('skin=')[1]=='digital')?'digital':'analog'),
                 format: 12,
                 band: true,
                 icon: '<svg fill="#fff" xmlns="http://www.w3.org/2000/svg" width="90px" viewBox="0 0 287 287"><path d="M 0 0 L 0 20 L 0 39.900391 L 73.800781 40.199219 L 147.59961 40.5 L 155.5 44.400391 C 165.8 49.500391 177.20078 60.6 181.80078 70 C 192.90078 92.5 188.00039 116.80039 168.90039 134.40039 C 165.10039 138.00039 159.6 141.70039 155 143.90039 C 147.7 147.40039 147.20078 147.50078 133.30078 147.80078 C 125.40078 148.10078 119 148.50039 119 148.90039 C 119 149.20039 134.39922 180.40078 153.19922 218.30078 L 187.40039 287 L 207.69922 287 C 218.89922 287 228 286.8 228 286.5 C 228 286.2 216.09961 262.19961 201.59961 233.09961 L 175.09961 180.19922 L 179.80078 177.30078 C 195.10078 167.70078 213.70078 149.10039 219.30078 137.90039 C 225.70078 125.00039 227.50039 115.3 227.40039 94.5 C 227.40039 77.8 227.19961 75.8 224.59961 67.5 C 214.89961 35.6 188.59922 9.7003907 158.19922 1.9003906 C 151.09922 0.1003906 146.30078 0 75.300781 0 L 0 0 z M 0.099609375 49 L 0 168 L 0 287 L 20.5 287 L 41 287 L 41 193 L 41 99 C 41.0076 98.485845 41.0085 98.494088 41 98 L 41 94 L 41 90 L 87.599609 90 C 117.79961 90 134.79961 90.4 136.09961 91 C 138.59961 92.4 138.59961 95.6 136.09961 97 C 134.79961 97.6 117.79961 98 87.599609 98 L 50.009766 98 C 50.009766 98.116346 50.0042 97.999505 50 99 L 50 193 L 50 287 L 70 287 L 90 287 L 90.099609 238.80078 L 90.199219 190.5 L 114.19922 238.80078 L 138.09961 287 L 158.5 287 L 178.90039 287 L 154.09961 236.80078 C 140.39961 209.10078 123.99961 176.00078 117.59961 163.30078 C 111.19961 150.50078 106 139.79961 106 139.59961 C 106 139.29961 115.30078 139.00078 126.80078 138.80078 L 147.5 138.5 L 153.69922 135.09961 C 161.59922 130.89961 171.29961 120.8 174.59961 113.5 C 180.19961 101.3 180.19999 86.000391 174.5 74.400391 C 170.5 66.100391 161.09922 56.700781 153.19922 52.800781 L 146.5 49.5 L 73.300781 49.199219 L 0.099609375 49 z M 241 241 L 241 264 L 241 287 L 264 287 L 287 287 L 287 264 L 287 241 L 264 241 L 241 241 z "></path></svg>',
@@ -26,9 +39,20 @@
                 colors: {
                     background: '#D32F2F',
                     text: '#FFF',
-                    pointer: '#F90',
-                    smallPointer: '#F00'
+                    pointers: '#333',
+                    secPointer: '#FC0505'
                 },
+            });
+        </script>
+        
+        <script>
+            var skin = document.querySelectorAll('#skin option').forEach(function(el){
+                var what = (location.href.split('skin=')[1]==el.value)?true:false;
+                if(what){
+                    el.setAttribute('selected', what);
+                } else {
+                    el.removeAttribute('selected');
+                }
             });
         </script>
     </body>
