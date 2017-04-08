@@ -98,14 +98,29 @@ window['Watchface'] = function(options){
             var hours = today.getHours();
             var minutes = today.getMinutes();
             var seconds = today.getSeconds();
+            var ampm = '';
 
             var hDeg = hours * 30 + minutes * (360/720);
             var mDeg = minutes * 6 + seconds * (360/3600);
             var sDeg = seconds * 6;
+            
+            if(hours >= 12){
+                ampm = 'pm';
+            } else {
+                ampm = 'am';
+            }
+            
+            if(option('format')==12){
+                hours = hours % 12;
+                hours = hours ? hours : 12;
+                ampm = ' '+ampm;
+            } else {
+                ampm = '';
+            }
 
-            hours = (hours > 10) ? hours : "0" + hours;
-            minutes = (minutes > 10) ? minutes : "0" + minutes;
-            seconds = (seconds > 10) ? seconds : "0" + seconds;
+            hours = (hours >= 10) ? hours : "0" + hours;
+            minutes = (minutes >= 10) ? minutes : "0" + minutes;
+            seconds = (seconds >= 10) ? seconds : "0" + seconds;
 
             var setDigitalTime = function(what, val){
                 var el = watch.querySelectorAll('.digital-time > .'+what);
@@ -128,6 +143,7 @@ window['Watchface'] = function(options){
             setDigitalTime('hours', hours);
             setDigitalTime('minutes', minutes);
             setDigitalTime('seconds', seconds);
+            setDigitalTime('ampm', ampm);
 
             setAnalogTime('hour', hDeg);
             setAnalogTime('minute', mDeg);
@@ -153,6 +169,7 @@ window['Watchface'] = function(options){
             var digitalTime = '<span class="digital-time">'+
                                     '<span class="hours"></span>:<span class="minutes"></span>'+
                                     ((option('seconds'))?':<span class="seconds"></span>':'')+
+                                    '<span class="ampm"></span>'+
                               '</span>';
             
             if(option('mode')=='digital'){

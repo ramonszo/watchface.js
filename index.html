@@ -11,6 +11,9 @@
             .resize:after {content:'\2190'}
             
             .skin {white-space: nowrap;overflow: hidden;font-weight: bold;position: absolute;z-index: 9999999;/*sorry*/;left:0;right:0;bottom: 0;background: #fff;font-size:12px;padding:12px;color:#fff;background:#333;}
+            @media(max-height: 300px){ .skin {display: none} }
+            @media(max-width: 120px){ .skin {display: none} }
+            
             #watch-face {font-family: monospace !important;}
         </style>
     </head>
