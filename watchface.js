@@ -25,15 +25,19 @@ window['Watchface'] = function(options){
                 secPointer: '#FC0505'
             },
         };
+        
+        var type = function(what){
+            return (typeof what !== 'undefined');
+        };
 
-        if(prop){
-            if(options[name]){
-                return options[name][prop] || optionsDefault[name][prop]
+        if (prop) {
+            if (type(options[name])) {
+                return (type(options[name][prop]))?options[name][prop]:optionsDefault[name][prop];
             } else {
                 return optionsDefault[name][prop];
             }
         } else {
-            return options[name] || optionsDefault[name]
+            return (type(options[name]))?options[name]:optionsDefault[name];
         }
     };
 
@@ -144,8 +148,6 @@ window['Watchface'] = function(options){
                 }
             };
             
-            //str = hours+':'+minutes+(option('seconds')?':'+seconds:'');
-
             setDigitalTime('hours', hours);
             setDigitalTime('minutes', minutes);
             setDigitalTime('seconds', seconds);
