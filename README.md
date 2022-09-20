@@ -32,3 +32,9 @@ Just call when you're ready:
     - analogText: #333 `Analog clock text color`
     - pointers: #333 `Analog clock pointers color`
     - secPointer: #FC0505 `Analog clock second pointer color`
+
+---
+
+<a href="https://ramon82.com" target="_blank">
+  <img src="https://utils.ramon82.com/hit.svg?referrer=github.com&title=GitHub%20/%20watchface.js&location=https://github.com/ramon82/watchface.js" width="24" height="24" />
+</a>
