@@ -1,16 +1,18 @@
 # watchface.js
 
-[![Watchface.JS demo](https://raw.githubusercontent.com/ramon82/watchface.js/master/preview.gif)](https://on.ramon82.com/2k82hxi)
+[![Watchface.JS demo](https://raw.githubusercontent.com/ramonszo/watchface.js/master/preview.gif)](https://on.ramon.codes/2k82hxi)
 
 ## A *useless* library to fill the gap between mobile and layout breaks
 Or ***a cool easter egg for responsive perfectionists***. 
 
-Live demo: https://on.ramon82.com/2k82hxi
+Live demo: https://on.ramon.codes/2k82hxi
 
 ## How to use
 Just call when you're ready: 
 
-	Watchface({options object});
+```js
+Watchface({options object});
+```
 
 ## Options
 * id: `Watch id, will be created if unexistent. Default: 'watchface'.`
@@ -35,6 +37,6 @@ Just call when you're ready:
 
 ---
 
-<a href="https://ramon82.com" target="_blank">
-  <img src="https://utils.ramon82.com/hit.svg?referrer=github.com&title=GitHub%20/%20watchface.js&location=https://github.com/ramon82/watchface.js" width="24" height="24" />
+<a href="https://ramon.codes" target="_blank">
+  <img src="https://ws.ramon.codes/hit.svg?referrer=github.com&title=GitHub%20/%20watchface.js&location=https://github.com/ramonszo/watchface.js" width="24" height="24" />
 </a>
